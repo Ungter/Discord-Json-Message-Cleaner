@@ -11,7 +11,7 @@ fs.readFile('cleaned_data.json', 'utf8', (err, jsonString) => {
 
     const formattedData = data.conversations.map(pair => ({
         messages: [
-            { role: "system", content: "A chat bot based on the Potao Gang GC" },
+            { role: "system", content: "" },
             { role: "user", content: pair.prompt },
             { role: "assistant", content: pair.completion }
         ]
