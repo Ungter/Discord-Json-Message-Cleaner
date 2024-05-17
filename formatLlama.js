@@ -15,13 +15,12 @@ fs.readFile('cleaned_data.json', 'utf8', (err, jsonString) => {
         .map(pair => ({
             instruction: "",
             input: pair.prompt.replace(/\n/g, ""),
-            output: pair.completion.replace(/\n/g, "")  // Ensuring newline characters are properly escaped in JSON output
+            output: pair.completion.replace(/\n/g, "")  // Newline characters are escaped in JSON output
         }));
 
-    // Convert the formatted data to a JSON string with proper formatting
-    const outputData = JSON.stringify(formattedData, null, 4); // 'null, 4' adds indentation for readability
 
-    // Write the reformatted data to a new file
+    const outputData = JSON.stringify(formattedData, null, 4);
+
     fs.writeFile('transformed_data.json', outputData, err => {
         if (err) {
             console.error("Error writing the file:", err);
