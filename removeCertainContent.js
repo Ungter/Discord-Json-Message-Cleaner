@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Read the original JSON data
-fs.readFile('GC.json', 'utf8', (err, jsonString) => {
+fs.readFile('.json', 'utf8', (err, jsonString) => {
     if (err) {
         console.error("Error reading the file:", err);
         return;
